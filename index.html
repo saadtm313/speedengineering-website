@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Speedengineering supplies industrial manual valves, automation valves, flanges, fittings and pneumatic actuators. Contact us for product information and quotations.">
+  <title>Speedengineering | Industrial Valves & Flow Control</title>
+  <style>
+    :root{--bg:#0b0d10;--panel:#14181e;--gold:#d6ad55;--gold2:#f0d38a;--text:#f5f5f2;--muted:#b6bbc3;--line:#2b3038}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1160px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(11,13,16,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:76px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:1.2px}
+    .logo{width:44px;height:44px;border:2px solid var(--gold);border-radius:9px;display:grid;place-items:center;color:var(--gold);font-weight:900;font-size:18px}
+    .brand small{display:block;font-size:10px;color:var(--muted);letter-spacing:2px;font-weight:500}
+    nav{display:flex;gap:24px;align-items:center;font-size:14px;color:#e3e5e8}
+    nav a:hover{color:var(--gold2)} .menu{display:none}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:6px;background:var(--gold);color:#111;font-weight:800;border:1px solid var(--gold);transition:.2s}
+    .btn:hover{background:var(--gold2);transform:translateY(-1px)}
+    .btn.outline{background:transparent;color:var(--gold);border-color:#7c6535}
+    .hero{position:relative;overflow:hidden;padding:94px 0 82px;background:radial-gradient(ellipse at 82% 35%,#3d321d 0,transparent 32%),linear-gradient(125deg,#0b0d10 35%,#17191d 100%);border-bottom:1px solid var(--line)}
+    .hero:after{content:"";position:absolute;right:-100px;top:30px;width:440px;height:440px;border:1px solid rgba(214,173,85,.18);border-radius:50%;box-shadow:0 0 0 35px rgba(214,173,85,.035),0 0 0 75px rgba(214,173,85,.025)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;position:relative;z-index:1}
+    .eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:800}
+    h1{font-size:clamp(38px,5vw,64px);line-height:1.06;letter-spacing:-1.5px;margin:16px 0 20px}
+    h1 span{color:var(--gold)} .lead{font-size:18px;color:var(--muted);max-width:650px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .hero-card{background:linear-gradient(145deg,#1b2027,#101216);border:1px solid #393126;border-radius:16px;padding:28px;box-shadow:0 24px 70px #0006}
+    .hero-card .big{font-size:52px;color:var(--gold);font-weight:900;line-height:1}
+    .hero-card h3{margin:16px 0 6px;font-size:22px}.hero-card p{color:var(--muted);margin:0}
+    .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+    .mini{padding:13px;border:1px solid var(--line);border-radius:8px;color:#e7e7e7;font-size:13px}
+    section{padding:76px 0}
+    .section-head{max-width:700px;margin-bottom:32px}
+    .section-head h2{font-size:clamp(28px,3.5vw,42px);line-height:1.15;margin:10px 0}
+    .section-head p{color:var(--muted);margin:0}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .product{background:var(--panel);border:1px solid var(--line);padding:24px;border-radius:12px;min-height:220px;transition:.2s}
+    .product:hover{border-color:#8c7138;transform:translateY(-3px)}
+    .product-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:10px;background:#302719;color:var(--gold2);font-size:24px;margin-bottom:20px}
+    .product h3{margin:0 0 8px;font-size:19px}.product p{color:var(--muted);font-size:14px;margin:0 0 14px}
+    .tag{display:inline-block;border:1px solid #51452c;color:var(--gold2);font-size:11px;padding:4px 8px;border-radius:20px}
+    .about{background:#101318;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+    .feature-list{display:grid;gap:14px;margin-top:22px}
+    .feature{display:flex;gap:12px;color:#e7e9ec}.check{color:var(--gold);font-weight:900}
+    .material-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+    .material{padding:18px 12px;text-align:center;background:#191d23;border:1px solid var(--line);border-radius:9px;font-weight:700}
+    .quote{background:linear-gradient(120deg,#19160f,#111318);border:1px solid #4b3d23;border-radius:16px;padding:34px;display:grid;grid-template-columns:1fr 1fr;gap:32px}
+    form{display:grid;gap:12px}
+    input,select,textarea{width:100%;background:#0c0e12;border:1px solid #363b44;border-radius:6px;padding:13px;color:#fff;font:inherit}
+    input:focus,select:focus,textarea:focus{outline:1px solid var(--gold);border-color:var(--gold)}
+    textarea{min-height:105px;resize:vertical}
+    .note{font-size:12px;color:var(--muted)}
+    .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .contact-card{padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+    .contact-card strong{display:block;color:var(--gold);margin-bottom:7px}
+    footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:13px}
+    .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .wa{position:fixed;bottom:20px;right:20px;z-index:20;background:#25d366;color:#061b0c;font-weight:900;border-radius:999px;padding:14px 18px;box-shadow:0 6px 22px #0008}
+    @media(max-width:800px){nav{display:none}.menu{display:block;color:var(--gold);font-size:14px}.hero-grid,.about-grid,.quote{grid-template-columns:1fr}.hero{padding:64px 0}.hero:after{right:-260px}.products{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr}.material-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:520px){.products{grid-template-columns:1fr}.hero-card{padding:22px}.quote{padding:22px}section{padding:58px 0}.actions .btn{width:100%}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="Speedengineering home">
+      <!-- Replace this SE mark with your actual company logo if available -->
+      <div class="logo">SE</div>
+      <div>SPEEDENGINEERING<small>INDUSTRIAL FLOW SOLUTIONS</small></div>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#products">Products</a><a href="#about">About Us</a><a href="#quote">Get a Quote</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="menu" href="#products">Explore ↓</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Industrial valves • Flow control • Automation</div>
+        <h1>Precision in Every <span>Connection.</span></h1>
+        <p class="lead">Your industrial sourcing partner for valves, flanges, fittings and pneumatic actuator solutions. Contact Speedengineering for product details and quotation requests.</p>
+        <div class="actions">
+          <a class="btn" href="#quote">Request a Quote ↗</a>
+          <a class="btn outline" href="#products">Explore Products</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="eyebrow">Our product range</div>
+        <div class="big">01—05</div>
+        <h3>Industrial Flow Control</h3>
+        <p>Product categories for industrial applications, with specifications confirmed according to your requirement.</p>
+        <div class="mini-grid">
+          <div class="mini">Manual Valves</div><div class="mini">Automation Valves</div>
+          <div class="mini">Flanges & Fittings</div><div class="mini">Pneumatic Actuators</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Product catalogue</div>
+        <h2>Products built around your requirements.</h2>
+        <p>Browse our key product categories. Share your required size, material, pressure rating and quantity to request a quotation.</p>
+      </div>
+      <div class="products">
+        <article class="product"><div class="product-icon">◉</div><h3>Manual Valves</h3><p>Manual operation valve options for industrial flow-control requirements.</p><span class="tag">Flow Control</span></article>
+        <article class="product"><div class="product-icon">⚙</div><h3>Automation Valves</h3><p>Valve automation options for suitable industrial processes and applications.</p><span class="tag">Automation</span></article>
+        <article class="product"><div class="product-icon">⎔</div><h3>Flanges</h3><p>Flange options based on required standards, dimensions and material.</p><span class="tag">Pipe Connection</span></article>
+        <article class="product"><div class="product-icon">⌁</div><h3>Fittings</h3><p>Industrial fitting requirements can be shared for product matching and quotation.</p><span class="tag">Piping</span></article>
+        <article class="product"><div class="product-icon">↻</div><h3>Pneumatic Actuators</h3><p>Actuator options for compatible valve automation applications.</p><span class="tag">Pneumatic</span></article>
+        <article class="product"><div class="product-icon">＋</div><h3>Need a Specific Product?</h3><p>Send your technical requirement and our team can review the details with you.</p><a href="#quote" style="color:var(--gold);font-weight:800">Send Enquiry →</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <div class="eyebrow">About Speedengineering</div>
+        <h2 style="font-size:clamp(28px,3.5vw,42px);line-height:1.15">A focused approach to industrial supply.</h2>
+        <p style="color:var(--muted)">Speedengineering works across industrial manual valves, automation valves, flanges, fittings and pneumatic actuators. We aim to understand each customer's application and product specifications before quotation.</p>
+        <div class="feature-list">
+          <div class="feature"><span class="check">✓</span><span>Product categories for industrial applications</span></div>
+          <div class="feature"><span class="check">✓</span><span>Requirement-based quotation enquiries</span></div>
+          <div class="feature"><span class="check">✓</span><span>Direct contact for product discussions</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow">Materials</div>
+        <h2 style="font-size:28px;margin:10px 0">Material options</h2>
+        <p style="color:var(--muted)">Availability and suitability depend on the product and specification. Confirm the exact material when enquiring.</p>
+        <div class="material-grid">
+          <div class="material">SS304</div><div class="material">SS316</div><div class="material">Carbon Steel</div><div class="material">Aluminium</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quote">
+    <div class="wrap">
+      <div class="quote">
+        <div>
+          <div class="eyebrow">Get a quote</div>
+          <h2 style="font-size:clamp(28px,3vw,40px);line-height:1.15">Tell us what you need.</h2>
+          <p style="color:var(--muted)">Fill in your requirement. The button will prepare a WhatsApp message to Speedengineering so you can review and send it.</p>
+          <p class="note">Please include product name, size, material, pressure rating, quantity and any required standard if available.</p>
+        </div>
+        <form id="quoteForm">
+          <input id="name" name="name" placeholder="Your name / Company" required>
+          <input id="phone" name="phone" placeholder="Your phone number" type="tel">
+          <select id="product" name="product" required>
+            <option value="">Select product category</option><option>Manual Valves</option><option>Automation Valves</option><option>Flanges</option><option>Fittings</option><option>Pneumatic Actuators</option><option>Other / Multiple Products</option>
+          </select>
+          <textarea id="details" name="details" placeholder="Product specifications, quantity and delivery location" required></textarea>
+          <button class="btn" type="submit">Prepare WhatsApp Enquiry ↗</button>
+          <div class="note">Your message opens in WhatsApp; it is not sent automatically.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Contact us</div><h2>Let's discuss your requirement.</h2><p>For product information and quotation enquiries, contact Speedengineering directly.</p></div>
+      <div class="contact-grid">
+        <div class="contact-card"><strong>WhatsApp / Phone</strong><a href="https://wa.me/919321892182" target="_blank" rel="noopener">+91 93218 92182</a></div>
+        <div class="contact-card"><strong>Email</strong><a href="mailto:infospeedeng@gmail.com">infospeedeng@gmail.com</a></div>
+        <div class="contact-card"><strong>Business Enquiries</strong><span>Industrial valves, flanges, fittings and actuator requirements.</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot"><span>© <span id="year"></span> Speedengineering. All rights reserved.</span><span>Industrial Flow Solutions</span></div>
+</footer>
+<a class="wa" href="https://wa.me/919321892182?text=Hello%20Speedengineering%2C%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" rel="noopener" aria-label="Chat with Speedengineering on WhatsApp">WhatsApp ↗</a>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('quoteForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim() || 'Not provided';
+    const product = document.getElementById('product').value;
+    const details = document.getElementById('details').value.trim();
+    const message = `Hello Speedengineering, I would like to request a quotation.%0A%0AName/Company: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AProduct: ${encodeURIComponent(product)}%0ARequirement: ${encodeURIComponent(details)}`;
+    window.open('https://wa.me/919321892182?text=' + message, '_blank', 'noopener');
+  });
+</script>
+</body>
+</html>
