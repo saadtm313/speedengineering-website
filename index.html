@@ -151,48 +151,7 @@
     </div>
   </section>
 
-  <section id="quote">
-    <div class="wrap">
-      <div class="quote">
-        <div>
-          <div class="eyebrow">Get a quote</div>
-          <h2 style="font-size:clamp(28px,3vw,40px);line-height:1.15">Tell us what you need.</h2>
-          <p style="color:var(--muted)">Fill in your requirement. The button will prepare a WhatsApp message to Speedengineering so you can review and send it.</p>
-          <p class="note">Please include product name, size, material, pressure rating, quantity and any required standard if available.</p>
-        </div>
-        <form id="quoteForm">
-          <input id="name" name="name" placeholder="Your name / Company" required>
-          <input id="phone" name="phone" placeholder="Your phone number" type="tel">
-          <select id="product" name="product" required>
-            <option value="">Select product category</option><option>Manual Valves</option><option>Automation Valves</option><option>Flanges</option><option>Fittings</option><option>Pneumatic Actuators</option><option>Other / Multiple Products</option>
-          </select>
-          <textarea id="details" name="details" placeholder="Product specifications, quantity and delivery location" required></textarea>
-          <button class="btn" type="submit">Prepare WhatsApp Enquiry ↗</button>
-          <div class="note">Your message opens in WhatsApp; it is not sent automatically.</div>
-        </form>
-      </div>
-    </div>
-  </section>
-<div style="max-width:1100px;margin:30px auto;text-align:center;padding:0 15px;">
-  <h2 style="color:#20a8e0;margin-bottom:15px;">Our Product Catalogue</h2>
-  <img src="./product-catlog.png.jpeg" alt="Speed Engineering Product Catalogue" style="width:100%;height:auto;display:block;border-radius:12px;">
-  <p style="font-size:13px;color:#888;margin-top:10px;">Illustrative product visuals. Actual product specifications may vary.</p>
-</div>
-  <a href="./Speed-Engineering-Catalogue.pdf" download style="display:inline-block;margin:20px auto;padding:14px 26px;background:#20a8e0;color:white;text-decoration:none;border-radius:8px;font-weight:bold;">Download Full Catalogue PDF</a>
-  <!-- Management Card --><section style="background:#0B0B0B;padding:35px 20px;text-align:center;">
-  <div style="max-width:600px;margin:auto;padding:25px 15px;border:1px solid #D4AF37;border-radius:12px;box-shadow:0 4px 15px rgba(212,175,55,0.15);">
-    <h2 style="color:#D4AF37;font-size:24px;font-weight:700;margin:0 0 12px;">
-      ASHFAQUE NM. TAMBOLI
-    </h2>
-    <p style="color:#D1D1D1;font-size:16px;margin:0 0 12px;">
-      Manager &amp; Managing Director
-    </p>
-    <h3 style="color:#D4AF37;letter-spacing:2px;font-size:18px;margin:0;">
-      SPEED ENGINEERING
-    </h3>
-  </div>
-</section>
-<section id="rfq" style="background:#0B0B0B;color:#fff;padding:40px 20px;">
+        <option value="">Select product</option><section id="rfq" style="background:#0B0B0B;color:#fff;padding:40px 20px;">
   <div style="max-width:700px;margin:auto;border:1px solid #D4AF37;border-radius:12px;padding:25px;">
     <h2 style="color:#D4AF37;text-align:center;">Request a Quotation</h2>
     <p style="text-align:center;color:#ccc;">Share your product requirements and delivery address.</p>
@@ -211,8 +170,7 @@
       <input name="email" type="email" placeholder="you@company.com" style="width:100%;padding:12px;margin:8px 0 16px;box-sizing:border-box;">
 
       <label>Product Category *</label>
-      <select name="product" required style="width:100%;padding:12px;margin:8px 0 16px;box-sizing:border-box;">
-        <option value="">Select product</option>
+      <select name="product" required style="width:100%;padding:12px;margin:8px 0 
         <option>Manual Valves</option>
         <option>Automation Valves</option>
         <option>Flanges</option>
@@ -287,6 +245,27 @@ function sendRFQ(method) {
       '&body=' + encodeURIComponent(message);
   }
 }
+  </section>
+<div style="max-width:1100px;margin:30px auto;text-align:center;padding:0 15px;">
+  <h2 style="color:#20a8e0;margin-bottom:15px;">Our Product Catalogue</h2>
+  <img src="./product-catlog.png.jpeg" alt="Speed Engineering Product Catalogue" style="width:100%;height:auto;display:block;border-radius:12px;">
+  <p style="font-size:13px;color:#888;margin-top:10px;">Illustrative product visuals. Actual product specifications may vary.</p>
+</div>
+  <a href="./Speed-Engineering-Catalogue.pdf" download style="display:inline-block;margin:20px auto;padding:14px 26px;background:#20a8e0;color:white;text-decoration:none;border-radius:8px;font-weight:bold;">Download Full Catalogue PDF</a>
+  <!-- Management Card --><section style="background:#0B0B0B;padding:35px 20px;text-align:center;">
+  <div style="max-width:600px;margin:auto;padding:25px 15px;border:1px solid #D4AF37;border-radius:12px;box-shadow:0 4px 15px rgba(212,175,55,0.15);">
+    <h2 style="color:#D4AF37;font-size:24px;font-weight:700;margin:0 0 12px;">
+      ASHFAQUE NM. TAMBOLI
+    </h2>
+    <p style="color:#D1D1D1;font-size:16px;margin:0 0 12px;">
+      Manager &amp; Managing Director
+    </p>
+    <h3 style="color:#D4AF37;letter-spacing:2px;font-size:18px;margin:0;">
+      SPEED ENGINEERING
+    </h3>
+  </div>
+</section>
+16px;box-sizing:border-box;">
 </script>  
   <section id="contact">
     <div class="wrap">
@@ -316,8 +295,7 @@ Email Enquiry
     const phone = document.getElementById('phone').value.trim() || 'Not provided';
     const product = document.getElementById('product').value;
     const details = document.getElementById('details').value.trim();
-    const message = `Hello Speedengineering, I would like to request a quotation.%0A%0AName/Company: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AProduct: ${encodeURIComponent(product)}%0ARequirement: ${encodeURIComponent(details)}`;
-    window.open('https://wa.me/919321892182?text=' + message, '_blank', 'noopener');
+    const message = `const message = 'Hello Speed Engineering, I am interested in your products. Please share the best price and quotation for my requirements.\n\n' +
   });
 </script>
 </body>
