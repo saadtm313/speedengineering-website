@@ -192,6 +192,102 @@
     </h3>
   </div>
 </section>
+<section id="rfq" style="background:#0B0B0B;color:#fff;padding:40px 20px;">
+  <div style="max-width:700px;margin:auto;border:1px solid #D4AF37;border-radius:12px;padding:25px;">
+    <h2 style="color:#D4AF37;text-align:center;">Request a Quotation</h2>
+    <p style="text-align:center;color:#ccc;">Share your product requirements and delivery address.</p>
+
+    <form id="rfqForm">
+      <label>Company Name *</label>
+      <input name="company" required placeholder="Enter company name" style="width:100%;padding:12px;margin:8px 0 16px;box-sizing:border-box;">
+
+      <label>Contact Person *</label>
+      <input name="person" required placeholder="Your full name" style="width:100%;padding:12px;margin:8px 0 16px;box-sizing:border-box;">
+
+      <label>Mobile Number *</label>
+      <input name="phone" type="tel" required placeholder="Enter mobile number" style="width:100%;padding:12px;margin:8px 0 16px;box-sizing:border-box;">
+
+      <label>Email Address</label>
+      <input name="email" type="email" placeholder="you@company.com" style="width:100%;padding:12px;margin:8px 0 16px;box-sizing:border-box;">
+
+      <label>Product Category *</label>
+      <select name="product" required style="width:100%;padding:12px;margin:8px 0 16px;box-sizing:border-box;">
+        <option value="">Select product</option>
+        <option>Manual Valves</option>
+        <option>Automation Valves</option>
+        <option>Flanges</option>
+        <option>Fittings</option>
+        <option>Pneumatic Actuators</option>
+      </select>
+
+      <label>Material *</label>
+      <select name="material" required style="width:100%;padding:12px;margin:8px 0 16px;box-sizing:border-box;">
+        <option value="">Select material</option>
+        <option>SS304</option>
+        <option>SS316</option>
+        <option>Carbon Steel</option>
+        <option>Aluminum</option>
+        <option>Other / To be confirmed</option>
+      </select>
+
+      <label>Required Quantity *</label>
+      <input name="quantity" required placeholder="e.g. 10 pieces" style="width:100%;padding:12px;margin:8px 0 16px;box-sizing:border-box;">
+
+      <label>Delivery Address *</label>
+      <textarea name="address" required rows="3" placeholder="Building, street, area, complete delivery address" style="width:100%;padding:12px;margin:8px 0 16px;box-sizing:border-box;"></textarea>
+
+      <label>City *</label>
+      <input name="city" required placeholder="City" style="width:100%;padding:12px;margin:8px 0 16px;box-sizing:border-box;">
+
+      <label>State *</label>
+      <input name="state" required placeholder="State" style="width:100%;padding:12px;margin:8px 0 16px;box-sizing:border-box;">
+
+      <label>PIN Code *</label>
+      <input name="pincode" required inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="6-digit PIN code" style="width:100%;padding:12px;margin:8px 0 16px;box-sizing:border-box;">
+
+      <label>Additional Requirements</label>
+      <textarea name="notes" rows="3" placeholder="Size, pressure rating, specifications, etc." style="width:100%;padding:12px;margin:8px 0 20px;box-sizing:border-box;"></textarea>
+
+      <button type="button" onclick="sendRFQ('whatsapp')" style="width:100%;padding:14px;background:#D4AF37;color:#000;border:0;border-radius:8px;font-weight:bold;cursor:pointer;margin-bottom:10px;">Send Quotation Request on WhatsApp</button>
+
+      <button type="button" onclick="sendRFQ('email')" style="width:100%;padding:14px;background:#111;color:#D4AF37;border:1px solid #D4AF37;border-radius:8px;font-weight:bold;cursor:pointer;">Send Quotation Request by Email</button>
+    </form>
+  </div>
+</section>
+
+<script>
+function sendRFQ(method) {
+  const form = document.getElementById('rfqForm');
+  if (!form.reportValidity()) return;
+
+  const d = new FormData(form);
+  const fields = [
+    ['Company Name', 'company'],
+    ['Contact Person', 'person'],
+    ['Mobile Number', 'phone'],
+    ['Email', 'email'],
+    ['Product Category', 'product'],
+    ['Material', 'material'],
+    ['Quantity', 'quantity'],
+    ['Delivery Address', 'address'],
+    ['City', 'city'],
+    ['State', 'state'],
+    ['PIN Code', 'pincode'],
+    ['Additional Requirements', 'notes']
+  ];
+
+  const message = 'QUOTATION REQUEST - SPEED ENGINEERING\n\n' +
+    fields.map(([label, key]) => label + ': ' + (d.get(key) || 'Not provided')).join('\n');
+
+  if (method === 'whatsapp') {
+    window.open('https://wa.me/919321892182?text=' + encodeURIComponent(message), '_blank');
+  } else {
+    window.location.href = 'mailto:infospeedeng@gmail.com?subject=' +
+      encodeURIComponent('Quotation Request - Speed Engineering') +
+      '&body=' + encodeURIComponent(message);
+  }
+}
+</script>  
   <section id="contact">
     <div class="wrap">
       <div class="section-head"><div class="eyebrow">Contact us</div><h2>Let's discuss your requirement.</h2><p>For product information and quotation enquiries, contact Speedengineering directly.</p></div>
